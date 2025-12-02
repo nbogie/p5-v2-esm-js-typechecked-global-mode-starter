@@ -1,48 +1,34 @@
-# A Type-Checked JavaScript p5.js version 2 project starter
+# Sketch-as-ESM: An annotated type-Checked JavaScript p5.js version 2 global-mode project starter
 
-This is a work-in-progress starter simplest _type-checked_ javascript project supporting p5.js v2. It is intended for use with vscode.
+This is a work-in-progress commented starter project, set up for:
 
-It is intentionally a build-less setup intended for those who _do not have node.js installed_.
+-   p5 v2.x
+-   sketch as an ES module
+-   type-checked _javascript_
+-   intellisense (docs + autocompletion) for p5.js
+-   global-mode
 
-## Status:
+It's currently somewhere between a starter project and an annotated explainer.
 
-While it works, this version (branch) of the starter has some limitations:
+It is intentionally a build-less setup intended for those who _do not have node.js installed_, so the p5 type files are included.
 
-## Updating your type files for a new version of p5.js
+## Getting started
 
-If a new release of p5.js v2 has come out since you started with this template, and you want the latest, greatest types, we have to download them into this project.
+1. Open `index.html` via a web-server, _not_ directly from the file system.
 
-Specifically, both files from this location:
-https://cdn.jsdelivr.net/npm/p5@latest/types/
-need to be downloaded into the `myTypes/` folder in this project.
+ES modules cannot be opened directly by the browser from your file system. You need to load index.html from a web server. One easy-to-use example is the [LiveServer vscode extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
 
-Direct links:
+2. Check the demo app works
 
--   [global.d.ts](https://cdn.jsdelivr.net/npm/p5@latest/types/global.d.ts)
--   [p5.d.ts](https://cdn.jsdelivr.net/npm/p5@latest/types/p5.d.ts)
+3. press 'n' in the sketch to read the notes, if you're new to ES modules
 
-Yes, this is a bit of a nuisance. If you have node.js there is an [alternative node-based project starter project](https://github.com/nbogie/p5-v2-js-typechecked-global-mode-with-node-starter) that makes this easier for you. We're assuming here that you don't have node.js or don't want to use it.
+4. start deleting what you don't need!
 
-If you happen to know the command-line here are two options that make this quicker and less error-prone. (Either one will work - don't need both.)
+## Turning type-checking off
 
-#### if you have the wget command-line tool
+If you have problems with type-checking and you want to turn it off completely, you can do so by setting checkJs to false in jsconfig.json. Keep the jsconfig.json file to keep intelli-sense.
 
-```bash
-wget -P ./myTypes/ https://cdn.jsdelivr.net/npm/p5@latest/types/global.d.ts
-wget -P ./myTypes/ https://cdn.jsdelivr.net/npm/p5@latest/types/p5.d.ts
-```
-
-#### Or if you have the curl command-line tool
-
-```bash
-curl -O --output-dir ./myTypes/ https://cdn.jsdelivr.net/npm/p5@latest/types/global.d.ts
-curl -O --output-dir ./myTypes/ https://cdn.jsdelivr.net/npm/p5@latest/types/p5.d.ts
-```
-
-### Current issues and limitations:
-
--   The p5 types have been downloaded locally and saved in myTypes/ and would need updated when the user wants to use a later version of p5.js.
-    -   If you have node.js installed, this is much simplified - see [this alternative starter](https://github.com/nbogie/p5-v2-js-typechecked-global-mode-with-node-starter) in that case.
+Alternatively, you can just suppress a single type error by commenting //@ts-ignore on the line above the problem.
 
 ## Other p5 project starters
 
