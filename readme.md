@@ -16,7 +16,22 @@ It is intentionally a build-less setup intended for those who _do not have node.
 
 1. Open `index.html` via a web-server, _not_ directly from the file system.
 
-ES modules cannot be opened directly by the browser from your file system. You need to load index.html from a web server. One easy-to-use example is the [LiveServer vscode extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
+ES modules cannot be opened directly by the browser from your file system. You need to load index.html from a web server. 
+#### Example servers:
+
+If you use vscode, one popular, easy-to-use server is the [LiveServer vscode extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
+
+Or if you have node installed:
+
+```bash
+npx http-server -c-1
+```
+
+Or if you have python installed:
+
+```bash⁨⁨
+python -m http.server
+```
 
 2. Check the demo app works
 
